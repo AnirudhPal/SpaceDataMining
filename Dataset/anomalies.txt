@@ -1,0 +1,70 @@
+Spacecraft Anomaly Data
+
+A data base of spacecraft anomalies has been started at the Solar-
+Terrestrial Physics Division of the National Geophysical Data Center in
+1984.  It included the date, time, location, and other pertinent 
+information about incidents of spacecraft operational irregularity due to the
+environment.  These events range from minor operational problems which can be
+easily corrected to permanent spacecraft failures.  The data base includes
+spacecraft anomalies in interplanetary space and in near-earth orbit but it's
+main component comes from geostationary spacecraft.
+
+Many spacecraft are identified by aliases in order to preserve
+confidentiality, these are prefaced with the "@" character.
+
+Anomaly contributions slowed to a trickle and ceased in the early 1990s.
+The orginal database files have been converted to Excel Spreadsheets,
+however, here are the original column and field definitions.	
+
+
+                        SPACECRAFT ANOMALY DATA FORMAT
+                        Version 5 / September 2, 1988
+
+ Column  Fmt   Description
+ ----------------------------------------------------------------------------
+      1  A1    Format version.
+  2-  9  I8    Date  that this  anomaly report was entered (CCYYMMDD)
+ 10- 19  A10   Spacecraft identification,  i.e GOES-2,  @AA0301, @AA0302.
+               Alias spacecraft identifications should be 7 digits:
+               1 = @,  Digit 2-3 = Contributors ID,
+               4-5 = spacecraft family, 6-7 = sequence # within the family.
+ 20- 27  I8    Date of anomaly (CCYYMMDD Universal Time)
+ 28- 31  A4    Start time of anomaly, 9999 = no time (HHMM Universal Time)
+ 32- 34  I3    Uncertainty in time (Minutes)
+ 35- 38  I4    Duration (Minutes)
+ 39- 42  A4    Time of anomaly (HHMM Local Time)
+
+     43  A1    Orbit type,  G= geostationary,  P= polar circular,
+               E= elliptical, I= inclined, etc.
+     44  A1    N= North, S= South for following latitude, blank => no Lat.
+ 45- 46  I2    Geographic latitude of sub-orbit point at anomaly start.
+ 47- 48  I2    Uncertainty in latitude (Degrees)
+     49  A1    E= east, W= west for following longitude, blank => no Lat.
+ 50- 52  I3    Geographic longitude of sub-orbit point at anomaly start.
+ 53- 54  I2    Uncertainty in longitude (Degrees)
+ 55- 59  I5    Altitude (Kilometers)
+ 60- 64  A5    Anomaly type,  what was the anomalous behavior?
+               The coded definitions will evolve as needed.
+                 PC   : Phantom Command - uncommanded status change.
+                 PF   : Part Failure.
+                 TE   : Telemetry Error.
+                 SE   : Soft Error, recoverable bit flip type error.
+                 HE   : Hard Error, permanent chip damage or Latch-Up.
+                 SS   : System Shutdown.
+                 ESDM : ElectroStatic Discharge Measured (SCATHA specific).
+                 ATT  : Attitude Control Problem.
+                 UNK  : Unknown.
+ 65- 69  A5    Anomaly diagnosis, what type of event caused the anomaly?
+               The coded definitions will evolve as needed.
+                ECEMP : Electron Caused ElectroMagnetic Pulse.
+                        Internal, Deep dielectric charging
+                ESD   : ElectroStatic Discharge.
+                        Surface charging
+                SEU   : Single Event Upset, Solar or Galactic Cosmic Rays.
+                MCP   : Mission Control Problem, human induced or software
+                        error.
+                RFI   : Radio Frequency Interference.
+                UNK   : Unknown diagnosis.
+ 70-148 A79    Comment related to the anomaly
+149-151 I3     Sun-Vehicle-Earth angle in degrees.
+    152 A1     S = spin stabilized, A = 3-Axis stabilized.
